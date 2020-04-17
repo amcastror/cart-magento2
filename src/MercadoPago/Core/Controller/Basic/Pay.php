@@ -41,11 +41,6 @@ class Pay extends Action implements ViewInterface
     /**
      * @var
      */
-    protected $_url;
-
-    /**
-     * @var
-     */
     protected $_coreHelper;
 
     /**
@@ -53,19 +48,15 @@ class Pay extends Action implements ViewInterface
      * @param Context $context
      * @param Payment $paymentFactory
      * @param ScopeConfigInterface $scopeConfig
-     * @param ManagerInterface $messageManager
-     * @param ResultFactory $resultFactory
-     * @param UrlInterface $urlInterface
      * @param Data $coreHelper
      */
-    public function __construct(Context $context, Payment $paymentFactory, ScopeConfigInterface $scopeConfig, ManagerInterface $messageManager, ResultFactory $resultFactory, UrlInterface $urlInterface,
+    public function __construct(Context $context, Payment $paymentFactory, ScopeConfigInterface $scopeConfig,
 Data $coreHelper)
     {
         $this->_paymentFactory = $paymentFactory;
         $this->_scopeConfig = $scopeConfig;
-        $this->_messageManager = $messageManager;
-        $this->_resultFactory = $resultFactory;
-        $this->_url = $urlInterface;
+        $this->_messageManager = $this->_eventManager;
+        $this->_resultFactory = $this->resultFactory;
         $this->_coreHelper = $coreHelper;
         parent::__construct($context);
     }
