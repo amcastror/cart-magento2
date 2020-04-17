@@ -180,21 +180,21 @@ class Payment extends TopicsAbstract
      */
     public function createInvoice($order, $message)
     {
-        if (!$order->hasInvoices()) {
-            $invoice = $order->prepareInvoice();
-            $invoice->register();
-            $invoice->pay();
-            $invoice->addComment(str_replace("<br/>", "", $message), false, true);
+        // if (!$order->hasInvoices()) {
+        //     $invoice = $order->prepareInvoice();
+        //     $invoice->register();
+        //     $invoice->pay();
+        //     $invoice->addComment(str_replace("<br/>", "", $message), false, true);
 
-            $transaction = $this->_transactionFactory->create();
-            $transaction->addObject($invoice);
-            $transaction->addObject($invoice->getOrder());
-            $transaction->save();
-            $this->_invoiceSender->send($invoice, true, $message);
-            return true;
-        }
+        //     $transaction = $this->_transactionFactory->create();
+        //     $transaction->addObject($invoice);
+        //     $transaction->addObject($invoice->getOrder());
+        //     $transaction->save();
+        //     $this->_invoiceSender->send($invoice, true, $message);
+        //     return true;
+        // }
 
-        return false;
+        return true;
     }
 
     /**
