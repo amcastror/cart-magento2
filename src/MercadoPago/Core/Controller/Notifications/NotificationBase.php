@@ -13,7 +13,7 @@ if (interface_exists('\Magento\Framework\App\CsrfAwareActionInterface')) {
          * @param RequestInterface $request
          * @return InvalidRequestException|null
          */
-        public function createCsrfValidationException(RequestInterface $request): ?InvalidRequestException
+        public function createCsrfValidationException(RequestInterface $request)
         {
             return null;
         }
@@ -22,7 +22,7 @@ if (interface_exists('\Magento\Framework\App\CsrfAwareActionInterface')) {
          * @param RequestInterface $request
          * @return bool|null
          */
-        public function validateForCsrf(RequestInterface $request): ?bool
+        public function validateForCsrf(RequestInterface $request)
         {
             return true;
         }
