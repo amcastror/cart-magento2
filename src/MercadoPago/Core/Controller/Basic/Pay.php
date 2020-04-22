@@ -55,10 +55,10 @@ Data $coreHelper)
     {
         $this->_paymentFactory = $paymentFactory;
         $this->_scopeConfig = $scopeConfig;
-        $this->_messageManager = $this->_eventManager;
-        $this->_resultFactory = $this->resultFactory;
         $this->_coreHelper = $coreHelper;
         parent::__construct($context);
+        $this->_messageManager = $this->_eventManager;
+        $this->_resultFactory = $this->resultFactory;
     }
 
     /**
