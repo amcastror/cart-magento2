@@ -444,26 +444,26 @@ abstract class TopicsAbstract
      */
     public function _createInvoice($order)
     {
-        if (!$order->hasInvoices()) {
-          $invoice = $this->_invoiceService->prepareInvoice($order);
-          $invoice->register();
-          $invoice->pay();
-          $invoice->save();
+//         if (!$order->hasInvoices()) {
+//           $invoice = $this->_invoiceService->prepareInvoice($order);
+//           $invoice->register();
+//           $invoice->pay();
+//           $invoice->save();
 
-          $transaction = $this->_transactionFactory->create();
-          $transaction->addObject($invoice);
-          $transaction->addObject($invoice->getOrder());
-          $transaction->save();
+//           $transaction = $this->_transactionFactory->create();
+//           $transaction->addObject($invoice);
+//           $transaction->addObject($invoice->getOrder());
+//           $transaction->save();
 
-          $this->_invoiceSender->send($invoice);
+//           $this->_invoiceSender->send($invoice);
           
-//           $message = $this->getMessageInvoice($order, $invoice);
-//           $order->addStatusHistoryComment(__($message, $invoice->getId()))
-//             ->setIsCustomerNotified(true)
-//             ->save();
-          return true;
-        }
+// //           $message = $this->getMessageInvoice($order, $invoice);
+// //           $order->addStatusHistoryComment(__($message, $invoice->getId()))
+// //             ->setIsCustomerNotified(true)
+// //             ->save();
+//           return true;
+//         }
 
-      return false;
+      return true;
     }
 }
