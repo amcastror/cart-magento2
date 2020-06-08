@@ -170,7 +170,7 @@ abstract class TopicsAbstract
      * @param $response
      * @return bool
      */
-    public function isValidResponse($response): bool
+    public function isValidResponse($response)
     {
         if (!isset($response['status'])) {
             return false;
@@ -257,7 +257,7 @@ abstract class TopicsAbstract
     public function updateOrder($order, $data)
     {
         if ($this->checkStatusAlreadyUpdated($order, $data)) {
-          $this->_dataHelper->log("Already updated", 'mercadopago-basic.log', $teste);
+          $this->_dataHelper->log("Already updated", 'mercadopago-basic.log', $data);
           return $order;
         }
         $this->updatePaymentInfo($order, $data);
